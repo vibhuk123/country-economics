@@ -24,3 +24,13 @@ country = st.selectbox('Select a country', list(countries.keys()))
 country_code = countries[country]
 
 st.header(f'{country} Economic Overview')
+
+for name, code in INDICATORS.items():
+    data = get_indicator(country_code, code)
+
+    if not data.empty:
+        latest = data.iloc[0]
+        formatted_value = format_indicator(name, latest['value'])
+        st.metric(name, formatted_value, help=f'Latest available year: {int(latest['year'])}')
+    else:
+        st.metric(name, 'No data available!')
