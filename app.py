@@ -34,3 +34,31 @@ for name, code in INDICATORS.items():
         st.metric(name, formatted_value, help=f'Latest available year: {int(latest['year'])}')
     else:
         st.metric(name, 'No data available!')
+
+st.header('GDP over time')
+
+gdp = get_indicator(country_code, INDICATORS['GDP'])
+
+if not gdp.empty:
+    gdp = gdp.sort_values('year')
+
+    line_chart = px.line(
+        gdp,
+        x='year',
+        y='value',
+        title=f'{country} GDP (US$)',
+        labels={
+            'year': 'Year',
+            'value': 'GDP (US$)'
+        }
+    )
+
+    line_chart.update_layout(
+        hovermode='x unified',
+        yaxis_tickformat='$,.3s'
+    )
+
+    st.plotly_chart(line_chart, use_container_width=True)
+
+else:
+    st.warning(f'GDP data is not available for country: {country}')
