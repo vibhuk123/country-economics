@@ -1,5 +1,6 @@
 import requests
 import pandas as pd
+import streamlit as st
 
 INDICATORS = {
     "GDP": "NY.GDP.MKTP.CD",
@@ -10,6 +11,7 @@ INDICATORS = {
     "Population": "SP.POP.TOTL"
 }
 
+@st.cache_data(ttl=3600)
 def get_indicator(country, indicator):
     # get historical economic data 
 
