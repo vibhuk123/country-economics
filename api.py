@@ -5,6 +5,7 @@ import streamlit as st
 INDICATORS = {
     "GDP": "NY.GDP.MKTP.CD",
     "GDP per capita": "NY.GDP.PCAP.CD",
+    'Real GDP per capita': 'NY.GDP.PCAP.KD',
     "GDP growth": "NY.GDP.MKTP.KD.ZG",
     "Inflation": "FP.CPI.TOTL.ZG",
     "Unemployment": "SL.UEM.TOTL.ZS",
@@ -55,6 +56,9 @@ def format_indicator(name, value):
 
     elif name == 'Population':
         return f'{value:,.0f}'
+
+    elif name == 'Real GDP per capita':
+        return f'${value:,.0f}'
 
     return f'{value:,.2f}'
 

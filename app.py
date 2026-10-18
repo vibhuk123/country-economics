@@ -56,7 +56,7 @@ if not gdp.empty:
 
     gdp_line_chart.update_layout(hovermode='x unified', yaxis_tickformat='$,.3s')
 
-    st.plotly_chart(gdp_line_chart, use_container_width=True)
+    st.plotly_chart(gdp_line_chart, width='stretch')
 else:
     st.warning(f'GDP data is not available for {country}')
 
@@ -81,7 +81,7 @@ if not gdp_growth.empty:
 
     gdp_growth_line_chart.update_layout(hovermode='x unified', yaxis_ticksuffix='%')
 
-    st.plotly_chart(gdp_growth_line_chart, use_container_width=True)
+    st.plotly_chart(gdp_growth_line_chart, width='stretch')
 else:
     st.warning(f'GDP growth data is not available for {country}')
 
@@ -106,7 +106,7 @@ if not inflation.empty:
 
     inflation_line_chart.update_layout(hovermode='x unified', yaxis_ticksuffix='%')
 
-    st.plotly_chart(inflation_line_chart, use_container_width=True)
+    st.plotly_chart(inflation_line_chart, width='stretch')
 else:
     st.warning(f'Inflation data is not available for {country}')
 
@@ -131,7 +131,7 @@ if not unemployment.empty:
 
     unemployment_line_chart.update_layout(hovermode='x unified', yaxis_ticksuffix='%')
 
-    st.plotly_chart(unemployment_line_chart, use_container_width=True)
+    st.plotly_chart(unemployment_line_chart, width='stretch')
 else:
     st.warning(f'Unemployment data not available for {country}')
 
@@ -156,7 +156,7 @@ if not population.empty:
 
     population_line_chart.update_layout(hovermode='x unified', yaxis_tickformat=',.0f')
 
-    st.plotly_chart(population_line_chart, use_container_width=True)
+    st.plotly_chart(population_line_chart, width='stretch')
 else:
     st.warning(f'Population data not available for {country}')
 
