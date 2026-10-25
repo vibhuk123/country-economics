@@ -55,15 +55,12 @@ Data availability varies by country, indicator, and year. The dashboard uses the
 
 ```text
 country-economics/
-├── app.py                  # Main country dashboard
-├── api.py                  # API requests and data formatting
-├── indicators.py           # Economic indicator definitions
-├── charts.py               # Chart-related functionality
-├── analysis.py             # Economic analysis
+├── app.py                      # Main dashboard for exploring a country's economy
+├── api.py                      # Fetches World Bank data and formats indicator values
 ├── pages/
-│   └── compare_countries.py  # Country comparison page
-├── requirements.txt        # Python dependencies
-└── README.md               # Project documentation
+│   └── compare_countries.py    # Compares economic indicators across two countries
+├── requirements.txt            # Lists the Python dependencies required to run the app
+└── README.md                   # Project overview, documentation, and setup instructions
 ```
 
 ## Getting Started
