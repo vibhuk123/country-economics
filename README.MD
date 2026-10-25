@@ -2,6 +2,8 @@
 
 An interactive dashboard for exploring and comparing economic indicators across countries using data from the [World Bank Open Data API](https://data.worldbank.org/).
 
+🌐 **Live Demo:** [View the Country Economics Dashboard](https://econatlas.streamlit.app)
+
 Built with Python, Streamlit, Pandas, and Plotly, this project makes international economic data easier to explore through interactive visualizations, side-by-side comparisons, and downloadable datasets.
 
 ## Features
