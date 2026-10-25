@@ -8,6 +8,8 @@ st.set_page_config(page_title='Country Economics Dashboard', page_icon='🌍', l
 st.title('Country Economics Dashboard')
 st.write('Explore economic indicators across the globe')
 
+st.page_link('pages/compare_countries.py', label='Compare Countries', icon='🔄')
+
 countries = {
     'India': 'IND',
     'United States': 'USA',
@@ -159,5 +161,3 @@ if not population.empty:
     st.plotly_chart(population_line_chart, width='stretch')
 else:
     st.warning(f'Population data not available for {country}')
-
-st.page_link('pages/compare_countries.py', label='Compare Countries', icon='📊')
